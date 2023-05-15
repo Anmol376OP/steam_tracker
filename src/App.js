@@ -1,23 +1,16 @@
-import logo from './logo.svg';
+import { useState } from 'react';
 import './App.css';
+import bg from './assets/bg.jpg'
+import SideNav from './components/SideNavbar'
 
 function App() {
+  const [flex, setFlex] = useState(12)
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App" style={{ backgroundImage: `url('${bg}')` }}>
+      <div className={flex === 12 ? 'SideNav' : 'SideNav active'}>
+        <SideNav setFlex={setFlex} flex={flex} />
+      </div>
+      <div className='MainBody' style={{ flex: `${flex}` }}></div>
     </div>
   );
 }

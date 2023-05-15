@@ -1,38 +1,90 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.App{
+  width: 100vw;
+  height: 100vh;
+  background-position: center;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+}
+.SideNav{
+  z-index: 5;
+  position: relative;
+  width: 100%;
+  flex: 1;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  min-width: 80px;
+  transition: all 0.5s;
+}
+.SideNav.active{
+  min-width: 250px;
+}
+.MainBody{
+  position: relative;
+  width: 100%;
+  flex: 12;
+  height: 100%;
+  transition: all 0.5s;
+}
+.nav-body{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  color: white;
+  transition: all 0.5s;
+}
+.nav-profile{
+  display: flex;
+  flex-direction: row;
+  height: 100px;
+  width: 100%;
+  padding: 20px 0;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  margin: auto;
+}
+.profile-image{
+  height: 70px;
+  width: 70px;
+  /* flex: 1; */
+  border: 1px solid white;
+  background-position: center;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  border-radius: 40px;
+  margin: 10px 0;
+  transition: none;
+}
+.profile-name{
+  height: fit-content;
+  overflow: hidden;
+  max-width: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.transition-in{
+  transition: all 0.5s;
+  transition-delay: 0.5s;
+}
+.transition-out{
+  transition: all 0.5s;
+}
+.dispHidden{
+  max-width: 0;
+  overflow: hidden;
+}
+.ml10{
+  margin-left: 10px;
+}
+
+.heading{
+  font-weight: 600;
+  font-size: 20px;
+}
+.sub-heading{
+  font-weight: 400;
   color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  opacity: 0.3;
 }
